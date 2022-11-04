@@ -3,10 +3,17 @@ Al presionar el botón pedir un sexo
 'f' para femenino, 'm' para masculino.*/
 function mostrar()
 {
-	var sexoIngresado;
-	sexoIngresado = prompt("ingrese f ó m .");
+	let sexo;
 
+	sexo = prompt("Ingrese un género válido");
 
+	while(sexo != "f" && sexo != "m")
+	{
+		alert("El sexo ingresado no es válido");
 
-	txtIdSexo.value=sexoIngresado;
-}//FIN DE LA FUNCIÓN
+		sexo = prompt("Ingrese un género válido");
+	}
+
+	document.getElementById("txtIdSexo").value = sexo;
+}
+//Recién cuando la condición sea falsa, va a salir del while

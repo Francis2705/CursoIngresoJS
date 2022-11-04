@@ -1,6 +1,19 @@
 function mostrar()
 {
-	var destinoIngresado =txtIdDestino.value;
-	alert(destinoIngresado);
+	let destinoIngresado;
+	let mensaje;
 
-}//FIN DE LA FUNCIÓN
+	destinoIngresado = document.getElementById("txtIdDestino").value;
+
+	switch(destinoIngresado)
+	{
+		case "Cataratas":
+		case "Mar del plata":
+			mensaje = "En este destino hace calor";
+		break;
+		default:
+			mensaje = "En este destino hace frío";
+		break;
+	}
+	alert(mensaje);
+}

@@ -1,8 +1,67 @@
 function mostrar()
 {
-	//tomo la edad  
-	alert("ok");
+	let edad;
+	let estadocivil;
 	
+	edad=document.getElementById("txtIdEdad").value;
+	estadocivil=document.getElementById("estadoCivil").value;
 
+	edad=parseInt(edad);
 
-}//FIN DE LA FUNCIÓN
+	if(edad<18 && estadocivil!="Soltero")
+	{
+		alert("Es muy pequeño para NO ser soltero");
+	}
+}
+/* function mostrar()
+{
+	let edadingresada;
+	let mensaje;
+	let par;
+	
+	edadingresada = document.getElementById("txtIdEdad").value;
+	edadingresada = parseInt(edadingresada);
+	
+	par = edadingresada % 2;
+	
+	if(edadingresada < 13)
+	{
+		mensaje = "feliz dia";
+	}
+	else
+	{
+		if(edadingresada > 12 && edadingresada < 18 )
+		{
+			mensaje = "usted es adolescente";
+		}
+		if(edadingresada == 17)
+		{
+			mensaje = mensaje + " ultimo año!!";
+		}
+		else
+		{
+			if(edadingresada > 17)
+			{
+				mensaje = "tenes edad de laburar";
+			}
+			if(edadingresada == 33)
+			{
+				mensaje = mensaje + " como cristo";
+			}
+			if(edadingresada > 59)
+			{
+				mensaje = mensaje + " a jubilarse";
+			}
+			if(edadingresada == 88)
+			{
+				mensaje = mensaje + " lindo numero";
+			}
+		}
+	}
+	if(par == 0)
+	{
+		mensaje = mensaje + " sos par!!";
+	}
+	
+	alert(mensaje);
+}*/

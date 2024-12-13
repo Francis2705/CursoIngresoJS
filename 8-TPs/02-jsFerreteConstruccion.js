@@ -5,62 +5,56 @@ C.	Para hacer un contrapiso de 1m x 1m se necesitan 2 bolsas de cemento y 3 de c
 */
 function Rectangulo () 
 {
-    let ancho;
-    let largo;
-    let perímetro;
-    let alambre;
+    let altura;
+    let lado;
+    let perimetro;
+    let totalAlambre;
 
-    largo=document.getElementById("txtIdLargo").value;
-    ancho=document.getElementById("txtIdAncho").value;
+    altura = document.getElementById("txtIdLargo").value;
+    lado = document.getElementById("txtIdAncho").value;
 
-    largo=parseFloat(largo);
-    ancho=parseFloat(ancho);
+    altura = parseFloat(altura);
+    lado = parseFloat(lado);
 
-    perímetro=(largo+ancho)*2;
+    perimetro = altura*2 + lado*2;
+    totalAlambre = perimetro*3;
 
-    alambre=perímetro*3;
-
-    alert("Se necesita comprar " +alambre+ " metros de alambre");
+    alert("La cantidad de metros de alambre a comprar es " + totalAlambre);
 }
 function Circulo () 
 {
-	let perímetro;
     let radio;
-    let alambre;
-    const PI=3.14;
+    let perimetro;
+    let totalAlambre;
+    const PI = 3.14;
 
-    radio=document.getElementById("txtIdRadio").value;
-    radio=parseFloat(radio);
-    
-    perímetro=2*PI*radio;
+    radio = document.getElementById("txtIdRadio").value;
+    radio = parseFloat(radio);
 
-    alambre=perímetro*3;
+    perimetro = 2*PI*radio;
+    totalAlambre = perimetro*3;
 
-    alert("Se necesita comprar " +alambre+ " metros de alambre");
-
-
-//en la misma linea que declaro la constante le asigno el valor
-}
+    alert("La cantidad de metros de alambre a comprar es " + totalAlambre)
+} //en la misma linea que declaro la constante le asigno el valor
 function Materiales () 
 {
-	let ancho;
-    let largo;
-    let superficie;
-    let cemento;
-    let cal;
+    let lado1;
+    let lado2;
+    let perimetro;
+    let totalCal;
+    let totalCemento;
 
-    largo=document.getElementById("txtIdLargo").value;
-    ancho=document.getElementById("txtIdAncho").value;
+    lado1 = document.getElementById("txtIdLargo").value;
+    lado2 = document.getElementById("txtIdAncho").value;
 
-    largo=parseFloat(largo);
-    ancho=parseFloat(ancho);
-    
-    superficie=largo*ancho;
+    lado1 = parseFloat(lado1);
+    lado2 = parseFloat(lado2);
 
-    cemento=superficie*2;
-    cal=superficie*3;
+    perimetro = lado1*lado2;
+    totalCal = perimetro*3;
+    totalCemento = perimetro*2;
 
-    alert("Para un contrapiso de "+superficie+"m2, necesito comprar "+cemento+" bolsas de cemento y "+cal+" bolsas de cal");
+    alert("Para un contrapiso de " + perimetro + " m2, necesito comprar " + totalCal + " bolsas de cal y " + totalCemento + " bolsas de cemento");
 }
 /* El perímetro de una figura es la suma de todos sus lados
 El del rectángulo es 2*altura+2*lado

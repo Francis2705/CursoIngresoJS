@@ -4,13 +4,10 @@ e informar la suma acumulada y el promedio.
 */
 function mostrar()
 {
-	let contador;
-	let acumulador;
+	let contador = 0;
+	let acumulador = 0;
 	let numeroIngresado;
 	let repetir;
-
-	acumulador = 0;
-	contador = 0;
 
 	/*el do while, me sirve para estos casos, donde no tendría que inicializar la variable para que el flujo
 	de datos entre en el while. El do while lo que hace es que el flujo siga lineal, entre en el do al menos una vez,
@@ -34,13 +31,10 @@ function mostrar()
 }
 /* function mostrar()
 {
-	let contador;
-	let acumulador;
+	let contador = 0;
+	let acumulador = 0;
 	let numeroIngresado;
 	let repetir = 'Si';
-
-	acumulador = 0;
-	contador = 0;
 
 	while(repetir == "Si")
 	{

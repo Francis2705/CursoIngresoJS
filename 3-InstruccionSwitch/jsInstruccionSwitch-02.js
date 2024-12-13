@@ -1,7 +1,8 @@
 function mostrar()
 {
-	let mes; 
-	
+	let mes;
+	let mensaje;
+
 	mes = document.getElementById("txtIdMes").value;
 
 	switch(mes)
@@ -16,14 +17,15 @@ function mostrar()
 		break;
 		case "Julio":
 		case "Agosto":
-			mensaje = "Abrigate que hace frío";
+			mensaje = "Abrigate que hace frio";
 		break;
 		case "Septiembre":
 		case "Octubre":
 		case "Noviembre":
 		case "Diciembre":
-			mensaje = "Ya pasamos el frío ahora calor";
+			mensaje = "Ya pasamos el frio, ahora calor";
 		break;
 	}
+
 	alert(mensaje);
 }

@@ -8,13 +8,13 @@ function mostrar()
 
 	alert(random);
 
-	if(random==9 || random==10)
+	if(random == 9 || random == 10)
 	{
 		mensaje = "Excelente";
 	}
 	else
 	{
-		if(random>3)
+		if(random > 3)
 		{
 			mensaje = "Aprobó";
 		}

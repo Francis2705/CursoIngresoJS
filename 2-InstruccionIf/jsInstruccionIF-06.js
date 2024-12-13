@@ -4,40 +4,40 @@
 //tambien la edad ingresada 
 function mostrar()
 {
-	let edadingresada;
+	let edad;
 
-	edadingresada=document.getElementById("txtIdEdad").value;
-	edadingresada=parseInt(edadingresada);
+	edad = document.getElementById("txtIdEdad").value;
+	edad = parseInt(edad);
 
-	alert("Usted tiene "+ edadingresada +" años");
-
-	if(edadingresada > 59)
+	if(edad < 5)
 	{
-		alert("y es un anciano");
+		alert("usted es un bebe");
 	}
 	else
 	{
-		if(edadingresada > 17)
+		if(edad > 4 && edad < 13)
 		{
-			alert("y es adulto");
+			alert("usted es un nino");
 		}
 		else
 		{
-			if(edadingresada > 12 && edadingresada < 18)
+			if(edad > 12 && edad < 18)
 			{
-				alert("y es un adolescente");
+				alert("usted es un adolescente");
 			}
 			else
 			{
-				if(edadingresada > 4 && edadingresada < 13)
+				if(edad > 17 && edad < 61)
 				{
-					alert("y es un niño");
+					alert("usted es un adulto");
 				}
 				else
 				{
-					alert("y es un bebé");
+					alert("usted es un anciano");
 				}
 			}
 		}
 	}
+
+	alert("la edad ingresada es " + edad);
 }

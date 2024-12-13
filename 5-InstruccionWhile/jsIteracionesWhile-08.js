@@ -3,7 +3,41 @@ Al presionar el botón pedir  números  hasta que el usuario quiera,
 sumar los que son positivos y multiplicar los negativos.*/
 function mostrar()
 {
-	let numeroIngresado;
+	let num;
+	let respuesta;
+	let acumuladorPositivos = 0;
+	let acumuladorNegativos = 1;
+	let flagNegativos = false;
+
+	do
+	{
+		num = prompt("ingrese un numero");
+		num = parseFloat(num);
+
+		if(num >= 0)
+		{
+			acumuladorPositivos += num;
+		}
+		else
+		{
+			flagNegativos = true;
+			acumuladorNegativos *= num;
+		}
+
+		respuesta = prompt("quiere ingresar mas numeros?");
+
+	} while(respuesta == "si");
+
+	if(flagNegativos == false)
+	{
+		acumuladorNegativos = 0;
+	}
+
+	document.getElementById("txtIdSuma").value = acumuladorPositivos;
+	document.getElementById("txtIdProducto").value = acumuladorNegativos;
+}
+
+/* let numeroIngresado;
 	let acumuladorPositivos;
 	let acumuladorNegativos;
 	let respuesta = "Si";
@@ -36,5 +70,4 @@ function mostrar()
 	}
 	
 	document.getElementById("txtIdSuma").value = acumuladorPositivos;
-	document.getElementById("txtIdProducto").value = acumuladorNegativos;
-}
+	document.getElementById("txtIdProducto").value = acumuladorNegativos; */

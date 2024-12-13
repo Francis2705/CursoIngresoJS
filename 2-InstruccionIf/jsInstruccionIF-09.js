@@ -2,7 +2,8 @@ function mostrar()
 {
 	let random;
 	
-	random=Math.floor(Math.random() * 11);
+	//Math.random() genera numeros desde [0;1)
+	random = Math.floor(Math.random() * 11);
 
 	alert(random);
 }

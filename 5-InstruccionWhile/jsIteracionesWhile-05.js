@@ -5,13 +5,20 @@ function mostrar()
 {
 	let sexo;
 
-	sexo = prompt("Ingrese un género válido");
+	sexo = prompt("ingrese un sexo");
 
 	while(sexo != "f" && sexo != "m")
 	{
-		alert("El sexo ingresado no es válido");
+		sexo = prompt("por favor ingrese un sexo valido");
+	}
 
-		sexo = prompt("Ingrese un género válido");
+	if(sexo == "f")
+	{
+		sexo = "femenino";
+	}
+	else
+	{
+		sexo = "masculino";
 	}
 
 	document.getElementById("txtIdSexo").value = sexo;

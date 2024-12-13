@@ -7,15 +7,17 @@ function mostrar()
 
 	switch(destinoIngresado)
 	{
-		case "Cataratas":
-			mensaje = "Este destino se encuentra en el norte del país";
+		case "Bariloche":
+		case "Ushuaia":
+			mensaje = "se encuentra en el sur";
 		break;
-		case "Mar del plata":
-			mensaje = "Este destino se encuentra en el este del país";
+		case "Cataratas":
+			mensaje = "se encuentra en el norte";
 		break;
 		default:
-			mensaje = "Este destino se encuentra al sur del país";
+			mensaje = "se encuentra en el este";
 		break;
 	}
 	alert(mensaje);
 }
+//txtIdDestino

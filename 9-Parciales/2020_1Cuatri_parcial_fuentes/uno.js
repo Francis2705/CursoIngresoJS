@@ -12,13 +12,12 @@ están en relación de dependencia que cobran menos de 100000.
 
 b)El sueldo promedio mensual en total
 
-c)El hombre que trabaja más días 
+c)El hombre que trabaja más días
 
 y la mujer que
 trabaja menos días a la semana.
 */
-
-function mostrar()
+/* function mostrar()
 {
 	let nombre;
 	let sueldoMensual;
@@ -130,8 +129,107 @@ function mostrar()
 	console.log("El sueldo promedio mensual en total es " + promedio);
 	console.log("El hombre que trabaja mas dias es " + hombreMax + " con un total de " + diasMax + " días");
 	console.log("La mujer que menos trabaja es " + mujerMin + " con un total de " + diasMin + " días");
-}
+} */
 
+function mostrar()
+{
+	let tipo;
+	let precio;
+	let cantidad;
+	let marca;
+	let fabricante;
+	let precioAlcoholBarato;
+	let cantidadAlcoholBarato;
+	let fabricanteAlcoholBarato;
+	let tipoMasUnidades;
+	let promedioTipoMasUnidades;
+	let acumuladorAlcohol = 0;
+	let acumuladorBarbijo = 0;
+	let acumuladorJabon = 0;
+	let contadorAlcohol = 0;
+	let contadorBarbijo = 0;
+	let contadorJabon = 0;
+	let flagAlcohol = false;
+
+	for(let i = 0; i < 5; i ++)
+	{
+		tipo = prompt("ingrese un tipo de producto");
+		while(tipo != "barbijo" && tipo != "jabon" && tipo != "alcohol")
+		{
+			tipo = prompt("error, ingrese un tipo de producto");
+		}
+		precio = parseFloat(prompt("ingrese el precio"));
+		while(precio < 100 || precio > 300)
+		{
+			precio = parseFloat(prompt("error, ingrese el precio"));
+		}
+		cantidad = parseInt(prompt("ingrese la cantidad"));
+		while(cantidad < 0 || cantidad > 1000)
+		{
+			cantidad = parseInt(prompt("error, ingrese la cantidad"));
+		}
+		marca = prompt("ingrese la marca");
+		fabricante = prompt("ingrese el fabricante");
+
+		switch(tipo)
+		{
+			case "alcohol":
+				acumuladorAlcohol += cantidad;
+				contadorAlcohol ++;
+				if(flagAlcohol == false)
+				{
+					precioAlcoholBarato = precio;
+					cantidadAlcoholBarato = cantidad;
+					fabricanteAlcoholBarato = fabricante;
+					flagAlcohol = true;
+				}
+				else
+				{
+					if(precioAlcoholBarato > precio)
+					{
+						precioAlcoholBarato = precio;
+						cantidadAlcoholBarato = cantidad;
+						fabricanteAlcoholBarato = fabricante;
+					}
+				}
+			break;
+			case "jabon":
+				acumuladorJabon += cantidad;
+				contadorJabon ++;
+			break;
+			case "barbijo":
+				acumuladorBarbijo += cantidad;
+				contadorBarbijo ++;
+			break;
+		}
+	}
+
+	if(acumuladorAlcohol > acumuladorBarbijo && acumuladorAlcohol > acumuladorJabon)
+	{
+		tipoMasUnidades = "alcohol";
+		promedioTipoMasUnidades = acumuladorAlcohol / contadorAlcohol;
+	}
+	else
+	{
+		if(acumuladorJabon > acumuladorBarbijo && acumuladorJabon > acumuladorAlcohol)
+		{
+			tipoMasUnidades = "jabon";
+			promedioTipoMasUnidades = acumuladorJabon / contadorJabon;
+		}
+		else
+		{
+			tipoMasUnidades = "barbijo";
+			promedioTipoMasUnidades = acumuladorBarbijo / contadorBarbijo;
+		}
+	}
+
+	if(flagAlcohol == true)
+	{
+		console.log("la cantidad del alcohol mas barato es " + cantidadAlcoholBarato + " y el fabricante es " + fabricanteAlcoholBarato);
+	}
+	console.log("el tipo con mas unidades es " + tipoMasUnidades + " y el promedio por compra es " + promedioTipoMasUnidades.toFixed(2));
+	console.log("en total hay " + acumuladorJabon + " jabones");
+}
 /*
 Debemos realizar la carga de 5(cinco) productos de prevención de contagio,
 de cada una debo obtener los siguientes datos:
@@ -143,127 +241,7 @@ Se debe Informar al usuario lo siguiente:
 a) Del más barato de los alcohol, la cantidad de unidades y el fabricante
 b) Del tipo con mas unidades, el promedio por compra
 c) Cuántas unidades de jabones hay en total*/
-/* function mostrar()
-{
-	let tipo;
-	let precio;
-	let cantidad;
-	let marca;
-	let fabricante;
-	let precioAlcoholBarato;
-	let cantidadAlcoholBarato;
-	let fabricanteAlcoholBarato;
-	let contador = 0;
-	let acumuladorAlcohol = 0;
-	let acumuladorBarbijo = 0;
-	let acumuladorJabon = 0;
-	let contadorAlcohol = 0;
-	let contadorBarbijo = 0;
-	let contadorJabon = 0;
-	let promedio;
-	let mayorTipo;
-	let flagAlcohol = 0;
-	let mensajeAlcohol = "No se compraron alcoholes";
-	let mensajeTipoMasUnidades;
-	let mensajeJabon;
 
-	while(contador < 5)
-	{
-		tipo = prompt("ingrese el tipo ('barbijo', 'jabon' o 'alcohol')");
-		
-		while(tipo != "barbijo" && tipo!= "jabon" && tipo!= "alcohol")
-		{
-			tipo = prompt("Error. Ingrese un tipo valido ('barbijo', 'jabon' o 'alcohol')");
-		}
-
-		precio = prompt("ingrese un precio entre 100 y 300");
-		precio = parseFloat(precio); */
-
-		//while(precio < 100 || precio > 300 || isNaN(precio)/*el isnan me dice que va a entrar si el precio no es un numero*/)
-		//{
-			//precio = prompt("Error. Ingrese un precio entre 100 y 300");
-			//precio = parseFloat(precio);
-		//}
-
-		/* cantidad = prompt("ingrese la cantidad (max 1000)");
-		cantidad = parseInt(cantidad);
-		
-		while(cantidad <= 0 || cantidad > 1000 || isNaN(cantidad))
-		{
-			cantidad = prompt("Error. Ingrese una cantidad entre 1 y 1000");
-			cantidad = parseInt(cantidad);
-		}
-
-		marca = prompt("ingrese la marca");
-
-		fabricante = prompt("ingrese el fabricante"); */
-
-		//ahora me tengo que dar cuenta de que tipo es cada producto ingresado y hacer el contador
-
-		//la cantidad va variando depende de a que if o else entre, ya que en un caso es un valor, y en otro toma otro numero
-		/* switch(tipo)
-		{
-			case "alcohol":
-				acumuladorAlcohol += cantidad;
-				contadorAlcohol ++;
-
-				if(flagAlcohol == 0 || precioAlcoholBarato > precio)
-				{
-					precioAlcoholBarato = precio;
-					cantidadAlcoholBarato = cantidad;
-					fabricanteAlcoholBarato = fabricante;
-					flagAlcohol = 1;
-				}
-			break;
-			case "barbijo":
-				acumuladorBarbijo += cantidad;
-				contadorBarbijo ++;
-			break;
-			case "jabon":
-				acumuladorJabon += cantidad;
-				contadorJabon ++;
-			break;
-		}
-		
-		contador++;
-	} */
-
-	//tengo que ver cual acumulador es mayor
-
-	/* if(acumuladorAlcohol > acumuladorBarbijo && acumuladorAlcohol > acumuladorJabon)
-	{
-		mayorTipo = "alcohol";
-		promedio = acumuladorAlcohol / contadorAlcohol;
-	}
-	else
-	{
-		if(acumuladorBarbijo > acumuladorJabon && acumuladorBarbijo >= acumuladorAlcohol)
-		{
-			mayorTipo = "barbijo";
-			promedio = acumuladorBarbijo / contadorBarbijo;
-		}
-		else
-		{
-			mayorTipo = "jabon"
-			promedio = acumuladorJabon / contadorJabon;
-		}
-	}
-
-	if(flagAlcohol == 1)
-	{
-		mensajeAlcohol = "Fabricante alcohol barato: " + fabricanteAlcoholBarato + 
-		" Cantidad: " + cantidadAlcoholBarato +
-		" Precio: " + precioAlcoholBarato;
-	}
-
-	mensajeTipoMasUnidades = "Tipo con mas unidades: " + mayorTipo + " Promedio por compra: " + promedio;
-
-	mensajeJabon = "Unidades de jabon: " + acumuladorJabon;
-
-	alert(mensajeAlcohol + " " + mensajeTipoMasUnidades + " " + mensajeJabon);
-
-
-} */
 /* function mostrar()
 {
 	let contadorPersonas;

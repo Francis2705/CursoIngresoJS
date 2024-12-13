@@ -1,9 +1,16 @@
 function mostrar()
 {
-	let edadingresada;
+	let edad;
 
-	edadingresada=document.getElementById("txtIdEdad").value;
-	edadingresada=parseInt(edadingresada);
+	edad = document.getElementById("txtIdEdad").value;
+	edad = parseInt(edad);
+
+	if(edad == 15)
+	{
+		alert("nina bonita");
+	}
+
+	alert("su edad es " + edad);
 
 	/*La funcionalidad del if, es decir si se va a ejecutar el renglón de abajo (o un bloque)*/
 	/*Se puede poner un if, seguido de otro if, eso significa como si fuera un "y"*/
@@ -21,11 +28,4 @@ function mostrar()
 	|| "o"
 	! "distinto de"
 	*/
-	if(edadingresada == 15)
-	{
-		alert("Niña bonita");
-	}
- 
-	alert("Gracias por ingresar su edad");
-
 }

@@ -13,7 +13,7 @@ los amd.
 c)El modelo del procesador con más hilos de
 los intel.
 */
-function mostrar()
+/*function mostrar()
 {
 	let modelo;
 	let precio;
@@ -98,7 +98,7 @@ function mostrar()
     console.log("El precio total de la compra es " + acumuladroPrecio);
     console.log("El modelo del procesador con menos hilos de los amd es " + modeloMinAmd + " con unos hilos de " + cantidadNucleosMin);
     console.log("El modelo del procesador con más hilos de los intel es " + modeloMaxIntel + " con unos hilos de " + cantidadNucleosMax);
-}
+}*/
 
 /* Realizar el algoritmo que permita ingresar los datos de una compra productos de la construccion, hasta que el cliente quiera:
 Tipo validad("arena";"cal";"cemento")
@@ -111,7 +111,7 @@ a) El importe total a pagar , bruto sin descuento y...
 b) el importe total a pagar con descuento(solo si corresponde)
 d) Informar el tipo con mas cantidad de bolsas.
 f) El tipo mas caro */
-/* function mostrar()
+function mostrar()
 {
     let tipo;
     let cantidadDeBolsas;
@@ -208,7 +208,7 @@ f) El tipo mas caro */
     console.log("El total a pagar sin descuento es " + pagoFinalSinDescuento);
     console.log("El tipo con mas cantidad de bolsas es " + tipoMax + " con una cantidad de " + cantidadDeBolsasMax + " de bolsas");
     console.log("El tipo mas caro es " + tipoCaro + " con un precio por bolsa de $" + precioCaro);
-} */
+}
 /* function mostrar()
 {
   let respuesta;

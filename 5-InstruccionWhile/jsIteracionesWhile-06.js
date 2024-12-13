@@ -1,12 +1,8 @@
 function mostrar()
 {
-	let contador;
-	let acumulador;
+	let contador = 0;
+	let acumulador = 0; //acumulador siempre tiene que tener un 0, ya que es neutro
 	let numeroIngresado;
-
-	//acumulador siempre tiene que tener un 0, ya que es neutro
-	acumulador = 0;
-	contador = 0;
 
 	while(contador < 5)
 	{

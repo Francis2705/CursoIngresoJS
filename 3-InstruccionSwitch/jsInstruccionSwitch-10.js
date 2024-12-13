@@ -7,51 +7,39 @@ function mostrar()
 	estacion = document.getElementById("txtIdEstacion").value;
 	destino = document.getElementById("txtIdDestino").value;
 
-	switch (estacion)
+	switch(estacion)
 	{
 		case "Invierno":
-			switch (destino)
+			if(destino == "Bariloche")
 			{
-				case "Bariloche":
-					mensaje = "Se viaja";
-				break;
-				default:
-					mensaje = "No se viaja";
-				break;
+				mensaje = "Se viaja";
+			}
+			else
+			{
+				mensaje = "No se viaja";
 			}
 		break;
 		case "Verano":
-			switch (destino)
+			if(destino == "Cataratas" || destino == "Mar del plata")
 			{
-				case "Mar del plata":
-				case "Cataratas":
-					mensaje = "Se viaja";
-				break;
-				default:
-					mensaje = "No se viaja";
-				break;
+				mensaje = "Se viaja";
+			}
+			else
+			{
+				mensaje = "No se viaja";
 			}
 		break;
 		case "Otoño":
-			switch (destino)
-			{
-				case "Bariloche":
-				case "Mar del plata":
-				case "Cataratas":
-				case "Cordoba":
-					mensaje = "Se viaja";
-				break;
-			}
+			mensaje = "Se viaja";
 		break;
 		case "Primavera":
-			switch (destino)
+			if(destino == "Bariloche")
 			{
-				case "Bariloche":
-					mensaje = "No se viaja";
-				break;
-				default:
-					mensaje = "Se viaja";
-				break;
+				mensaje = "No se viaja";
+			}
+			else
+			{
+				mensaje = "Se viaja";
 			}
 		break;
 	}

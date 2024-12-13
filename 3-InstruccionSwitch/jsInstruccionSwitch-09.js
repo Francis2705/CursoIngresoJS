@@ -1,6 +1,60 @@
 function mostrar()
 {
-	const PRECIOINICIAL = 15000;
+	let estacion;
+	let destino;
+	let precioBase = 15000;
+	let porcentaje = 0;
+	let precioFinal;
+
+	estacion = document.getElementById("txtIdEstacion").value;
+	destino = document.getElementById("txtIdDestino").value;
+
+	switch(estacion)
+	{
+		case "Invierno":
+			switch(destino)
+			{
+				case "Bariloche":
+					porcentaje = 20/100;
+				break;
+				case "Cataratas":
+				case "Cordoba":
+					porcentaje = -10/100;
+				break;
+				case "Mar del plata":
+					porcentaje = -20/100;
+				break;
+			}
+		break;
+		case "Verano":
+			switch(destino)
+			{
+				case "Bariloche":
+					porcentaje = -20/100;
+				break;
+				case "Cataratas":
+				case "Cordoba":
+					porcentaje = 10/100;
+				break;
+				case "Mar del plata":
+					porcentaje = 20/100;
+				break;
+			}
+		break;
+		default:
+			if(destino != "Cordoba")
+			{
+				porcentaje = 10/100;
+			}
+		break;
+	}
+
+	precioFinal = precioBase + precioBase * porcentaje;
+
+	alert("El precio final es $" + precioFinal);
+}
+/*
+const PRECIOINICIAL = 15000;
 	let estacion;
 	let destino;
 	let porcentaje;
@@ -62,5 +116,4 @@ function mostrar()
 	
 	mensajeFinal = mensaje + precioFinal.toFixed(2);
 
-	alert(mensajeFinal);
-}
+	alert(mensajeFinal); */

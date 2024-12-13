@@ -7,16 +7,18 @@ function sumar()
 	let num1;
 	let num2;
 	let mensaje;
-
-	mensaje = "La suma es ";
+	let resultado;
 
 	num1 = document.getElementById("txtIdNumeroUno").value;
 	num2 = document.getElementById("txtIdNumeroDos").value;
 
-	num1 = parseFloat(num1);
-	num2 = parseFloat(num2);
+	num1 = parseInt(num1);
+	num2 = parseInt(num2);
 
-	alert(mensaje + (num1 + num2));
+	mensaje = "La suma es ";
+	resultado = num1 + num2;
+
+	alert(mensaje + resultado);
 }
 /*  function sumar()
 {

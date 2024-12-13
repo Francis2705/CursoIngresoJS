@@ -3,7 +3,14 @@ Al presionar el  botón,
 se debe mostrar un mensaje como el siguiente "Esto funciona de maravilla"*/
 function mostrar() 
 {
-	alert("Esto funciona de maravilla");
+	//alert("esto funciona de maravilla");
+	const numbers = [1, 2, 3, 4, 5];
+
+	const result = numbers
+	.map(num => num * 2)
+	.reduce((acc, curr) => acc + curr, 0);
+
+	console.log(result);
 }
 /*function mostrar() 
 {
